@@ -44,7 +44,7 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
     # make && make install
     # make clean 
     # make distclean
-  ```
+   ```
 然后命令行直接输入python，打开python解释器，如图：
 ![](http://i.imgur.com/mLTIuJy.png)
 >说明：因为当前没有linux环境，就使用cywin演示了一下，效果是跟linux的一样的。
@@ -164,7 +164,7 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
            print "OK"
         else:
         print "Failed"
-   ```
+    ```
   - 再次运行一下，返回值如下：
     ![](http://i.imgur.com/d9aCpAm.png)
   >通过以上实例得知逻辑或（or）只要满足其中一个条件即可成立。
@@ -192,7 +192,7 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
         >>> b = "World"
         >>> a+b
         'HelloWorld'
-   ```
+    ```
 - 乘号表达式：`*`，用于字符串重复出现，`*`后面跟重复的次数
   - 如下定义一个变量a = "Hello"，我想让它重复5次，可以使用a*5，如下：
      ```python
@@ -220,9 +220,11 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 为了区分普通整型和长整型，需要在整数的后面加大写`L`或者小写`l`
   - 例如：5145677888L, -0x45677532L,建议使用大写`L`，避免数字1与小写`l`混合，造成不必要的麻烦
 - 实例演示,定义给一个变量num赋值1L，可以通过type()查看当前变量的属性：
+    ```python
       >>> num=1L
       >>> type(num)
       <type 'long'>
+    ```
   也可以直接给num赋值一个超过整型(int)范围的数值：
     ```python
       >>> num=99999999999999999999999999999999999999999
@@ -1009,3 +1011,6 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     your input number is 6 error
     ```
      >备注：就演示一下输入1和输入6就可以达到目的了,这里面的`%s`和`%`输出格式化的字符串和格式化字符串
+
+
+
