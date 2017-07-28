@@ -40,10 +40,10 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 大多数Linux发行版都默认自带Python，一般都是Python2.x
 如果没有安装可以通过源码进行安装：
    ```python
-    # ./configure --prefix=/usr/local
-    # make && make install
-    # make clean 
-    # make distclean
+   # ./configure --prefix=/usr/local
+   # make && make install
+   # make clean 
+   # make distclean
    ```
 然后命令行直接输入python，打开python解释器，如图：
 ![](http://i.imgur.com/mLTIuJy.png)
@@ -62,13 +62,13 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 字节代码：Python源文件经过编译后生成的扩展名为"pyc"的文件，特点：运行速度快
   编译方法：
      ```python
-        import py_compile
-        py_compile("hello.py")
-     ```
+     import py_compile
+     py_compile("hello.py")
+    ```
 - 优化代码：经过优化后的源文件扩展名为".pyo"，特点：运行速度快
   优化方法：
    ```python
-        python -O -m py_compile hello.py
+   python -O -m py_compile hello.py
    ```
 - 以上三种均可以直接运行
 
@@ -85,9 +85,9 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 
 ### 实例演示：
    ```python
-      >>>a = 1
-      >>>a
-      1
+   >>>a = 1
+   >>>a
+   1
    ```
   >说明：给变量a赋值为1，并显示变量a的赋值结果，相当于我有个同学叫1，但是我先麻烦，所以我就给他另起了一个名称a，这样我直接叫a就可以了，当然叫1也行。变量赋值中间的等号严格意义上需要前后有空格，当然没有空格也行，推荐加空格。
 
@@ -95,14 +95,14 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 方便在脚本或者程序中，简化数据长度或者便于一次性修改脚本或者程序中多次使用的值。
   举个简单的例子，如下：
    ```python
-      # coding=utf-8
-      #!/bin/bash/env python
-      #设定变量a并赋值为50
-      a = 50
-      
-      print "我买本Python学习书籍价格"， a
-      print "我喝的可乐价格"， a
-      print "我买的车价格是"，  a
+   # coding=utf-8
+   #!/bin/bash/env python
+   #设定变量a并赋值为50
+   a = 50
+   
+   print "我买本Python学习书籍价格"， a
+   print "我喝的可乐价格"， a
+   print "我买的车价格是"，  a
    ```
   在上述的脚本中，如果价格发生变化，你是不是得每行去修改，如果内容多，那是不是更麻烦，为了减少这种不必要的操作浪费时间，就在开头设定变量a，然后赋值价格，这样，如果价格发生变化我们只需要修改变量a的值即可。简化数据这个有点跟这个相似，就是如果值的的数据很长，这样会增加代码的可读性难度，设定变量就容易多了。
 ## 运算符和表达式
@@ -141,13 +141,13 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 逻辑与： `and`，例如：1 and 2，判断结果必须同时满足1和2，否则不成立
   - 举个小例子：
      ```python
-        # coding=utf-8
-        #!/bin/bash/env python
+     # coding=utf-8
+     #!/bin/bash/env python
 
-        if 1 == 1 and 1 < 2 :
-           print "OK"
-        else:
-        print "Failed"
+     if 1 == 1 and 1 < 2 :
+        print "OK"
+     else:
+     print "Failed"
     ```
   - 运行上面的脚本，返回值如下：
     ![](http://i.imgur.com/tBczrzR.png)
@@ -157,13 +157,13 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 逻辑或： `or`,例如：1 or 2，判断结果只要满足其中一个就成立
   - 将上面例子中的脚本的and改为or：
      ```python
-        # coding=utf-8
-        #!/bin/bash/env python
+     # coding=utf-8
+     #!/bin/bash/env python
 
-        if 1 == 1 or 1 == 2 :
-           print "OK"
-        else:
-        print "Failed"
+     if 1 == 1 or 1 == 2 :
+        print "OK"
+     else:
+     print "Failed"
     ```
   - 再次运行一下，返回值如下：
     ![](http://i.imgur.com/d9aCpAm.png)
@@ -171,13 +171,13 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 逻辑非： `not`,例如： not 0，非0，取反
   - 在上面例子中的脚本的or 后面再添加一个逻辑非（not）：
      ```python
-        # coding=utf-8
-        #!/bin/bash/env python
+     # coding=utf-8
+     #!/bin/bash/env python
 
-        if 1 == 1 and  not 1 == 2 :
-           print "OK"
-        else:
-        print "Failed"
+     if 1 == 1 and  not 1 == 2 :
+        print "OK"
+     else:
+     print "Failed"
     ```
   - 运行返回结果如下：
      ![](http://i.imgur.com/d9aCpAm.png)
@@ -188,17 +188,17 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 加号表达式： `+`，用于字符串拼接
   - 如下分别定义一个变量a = "Hello"，b = "World"，想让Hello和World变成一句话，可以使用`+`进行拼接：
      ```python
-        >>> a = "Hello"
-        >>> b = "World"
-        >>> a+b
-        'HelloWorld'
-    ```
+     >>> a = "Hello"
+     >>> b = "World"
+     >>> a+b
+     'HelloWorld'
+     ```
 - 乘号表达式：`*`，用于字符串重复出现，`*`后面跟重复的次数
   - 如下定义一个变量a = "Hello"，我想让它重复5次，可以使用a*5，如下：
      ```python
-        >>> a = "Hello"
-        >>> a*5
-        'HelloHelloHelloHelloHello'
+      >>> a = "Hello"
+      >>> a*5
+      'HelloHelloHelloHelloHello'
     ```
     >注意：使用运算符号作为表达式，进行拼接或者重复出现时，变量的赋值必须是字符串（也就是等号后面的值必须用双引号`""`或者单引号`''`包起来）
 
@@ -210,9 +210,9 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
   - 例如：1，100，200，-100，-200
 - 实例演示，通过给num赋值123，可以通过`type()`查看当前变量的属性：
     ```python
-      >>> num=123
-      >>> type(num)
-      <type 'int'>
+    >>> num=123
+    >>> type(num)
+    <type 'int'>
     ```
 
 #### 长整型
@@ -221,23 +221,23 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
   - 例如：5145677888L, -0x45677532L,建议使用大写`L`，避免数字1与小写`l`混合，造成不必要的麻烦
 - 实例演示,定义给一个变量num赋值1L，可以通过type()查看当前变量的属性：
     ```python
-      >>> num=1L
-      >>> type(num)
-      <type 'long'>
+    >>> num=1L
+    >>> type(num)
+    <type 'long'>
     ```
   也可以直接给num赋值一个超过整型(int)范围的数值：
     ```python
-      >>> num=99999999999999999999999999999999999999999
-      >>> type(num)
-      <type 'long'>
+    >>> num=99999999999999999999999999999999999999999
+    >>> type(num)
+    <type 'long'>
     ```
 #### 浮点型
 - 浮点型（float）也就是常说的小数点类型，例如：3.7.-1.8. 3e+8等等
 - 实例演示，通过定义变量num赋值2.3，可以通过type()查看当前变量的属性：
     ```python
-      >>> num=1.2
-      >>> type(num)
-      <type 'float'>
+    >>> num=1.2
+    >>> type(num)
+    <type 'float'>
     ```
 
 #### 复数型
@@ -245,18 +245,18 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 复数类型（complex）通过给数值后面添加`j`来实现，如：3.4j,5.67j,32e-56j
 - 实例演示，通过定义变量num赋值2.3j，可以通过type()查看当前变量的属性：
     ```python
-       >>> num=1.2j
-       >>> type(num)
-       <type 'complex'>
+    >>> num=1.2j
+    >>> type(num)
+    <type 'complex'>
     ```
 
 ### 字符串
 - 使用引号（双引号`""`或者单引号`''`)定义的一组可以包含数字，字母，符号（非特殊符号）的集合
   - 例如：
       ```python
-        Name = 'My name is Tom'
-        Pay = "This is pay"
-        Car = """this is a car"""
+      Name = 'My name is Tom'
+      Pay = "This is pay"
+      Car = """this is a car"""
       ```
     >- 三重引号（docstring)`""" """`通常用来制作字符串后面再详说。
     >- 如果字符串中存在单引号`''`时可以使用双引号`""``，或者通过转义符`\`来进行转义
@@ -272,14 +272,14 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 索引同样可是负数，位置是从序列尾部开始计算的
   - 例如，当我们想取出a="12345678"中的8，可以这样做：
       ```python
-          >>> a = "12345678"
-          >>> a[7]
-          '8'
+      >>> a = "12345678"
+      >>> a[7]
+      '8'
      ```
   - 因为索引可以是负数，也可以这样取值：
        ```python
-         >>> a[-1]
-         '8'
+       >>> a[-1]
+       '8'
       ```
     >索引位置从左往右是：01234567，从右往左就是：-1，-2，-3，-4，-5，-6，-7，0
 
@@ -290,110 +290,110 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
   - 这与索引操作符很相似，不过需要使用`:`，并却是必须的
   - 切片操作符中的第一个数（冒号`:`之前）表示切片开始的位置，第二个数（冒号`:`之后）表示切片到哪里结束（不包含这个位置的元素）。如果不指定第一个数，Python就从序列的首位开始。如果没有指定第二个数，Python则会停止在序列的尾部。
     - 例如，定义变量a赋值字符串'12345678'，然后切取23456：
-        ```python
-          >>> a = "12345678"
-          >>> a[1:6]
-          '23456'
+       ```python
+       >>> a = "12345678"
+       >>> a[1:6]
+       '23456'
        ```
       >说明：计算机中`0`是默认开始位置，所以上述12345678对应的位置就是01234567，当我们要切取23456的字符串时，就得从1开始，按照切片取值定义想取到字符串6就得定位到6（这里的6不是字符串6，是7的位置）
     - 从位置1开始取值，不指定第二个位置，将会取到2345678：
-         ```python
-          >>> a = "12345678"
-          >>> a[1:]
-          '2345678'
-         ```
+       ```python
+       >>> a = "12345678"
+       >>> a[1:]
+       '2345678'
+       ```
     - 如果只有`[:]`将会打印出所有的值：
-        ```python
-          >>> a = "12345678" 
-          >>> a[:]
-          '12345678'
+       ```python
+       >>> a = "12345678" 
+       >>> a[:]
+       '12345678'
        ```
     - 当出现`[::]`时，后面没有步长值，默认位置为1，打印效果：
        ```python
-         >>> a = "12345678" 
-         >>> a[:：]
-         '12345678'
+       >>> a = "12345678" 
+       >>> a[:：]
+       '12345678'
        ```
     - 当`[::]`里面设定步长值后，如设置步长值为2：[::2]，打印效果：
        ```python
-        >>> a = "12345678" 
-        >>> a[:：2]
-        '1357'
+       >>> a = "12345678" 
+       >>> a[:：2]
+       '1357'
        ```
       >`[::2]`其实就是起到步长值得作用，后面的数字2就是走两步取后面一个值，上述的例子中，从位置1开始取值，然后从1位置走两步（也就是到位置3）取后面值3，然后从位置3走两步（也就是位置5）取后面值5，然后从位置5走两步（也就是位置7）取后面值7，最后取出来为1357.这里所说的走2步就是从位置1开始走到位置2算一步，然后到位置3就是第二步。
 
 ### 序列的基本操作
 - `len()`:求序列长度
   - 例如求a = "12345678"的长度：
-      ```python
-        >>>a = "12345678"
-        >>> len(a)
-        8
-      ```
+     ```python
+     >>>a = "12345678"
+     >>> len(a)
+     8
+     ```
 - `+`:连接2个序列：
    - 例如：
-       ```python
-         >>> a = "Hello"
-         >>> b = "World"
-         >>> a + b
-         'HelloWorld'
+      ```python
+      >>> a = "Hello"
+      >>> b = "World"
+      >>> a + b
+      'HelloWorld'
       ```
 - `*`:重复序列：
   - 例如将hello重复5次：
        ```python
-         >>> a = "Hello"
-         >>> a*5
-         'HelloHelloHelloHelloHello'
+       >>> a = "Hello"
+       >>> a*5
+       'HelloHelloHelloHelloHello'
       ```
 - `in`：判断元素是否在序列中
    - 例如判断c是否在a = "Hello"中：
-       ```python
-         >>> a = "Hello"
-         >>> 'c' in a
-         False
+      ```python
+      >>> a = "Hello"
+      >>> 'c' in a
+      False
       ```
      >返回Fasle说明不存在
 - `max()`:返回最大值
    - 例如查看a = "12345678"中的最大值：
        ```python
-         >>> a = "12345678"
-         >>> max(a)
-         '8'
+       >>> a = "12345678"
+       >>> max(a)
+       '8'
        ```
 - `min()`:返回最小值
    - 例如查看a = "12345678"中的最小值：
        ```python
-         >>> a = "12345678"
-         >>> min(a)
-         '1'
+       >>> a = "12345678"
+       >>> min(a)
+       '1'
        ```
 - `cmp(tuple1, tuple2)`:比较2个序列的值是否相等
    - 例如判断a = "3"与b = "4",返回结果：
        ```python
-         >>> a = "3"
-         >>> b = "4"
-         >>> cmp(a, b)
-         -1
+       >>> a = "3"
+       >>> b = "4"
+       >>> cmp(a, b)
+       -1
        ```
    - 如果a与b换个位置在进行比较一下看下返回结果：
        ```python
-         >>> cmp(b, a)
-         1
+       >>> cmp(b, a)
+       1
        ```
    - 如果a和b的值相等，看下返回值：
-        ```python
-         >>> a = "3"
-         >>> b = "3"
-         >>> cmp(b, a)
-         0
+       ```python
+       >>> a = "3"
+       >>> b = "3"
+       >>> cmp(b, a)
+       0
        ```
    >通过以上例子可以看出，当使用`cmp（tuple1，tuple2）`进行比较的时候，如果前面的数值大于后面的会返回1，小于时会返回-1，等于时会返回0，另外如果字符串是字母的时候它一般会按照英文字母的顺序进行比对，通常是后面的字母大于前面的，如：
 
     ```python  
-      >>> a = "c"
-      >>> b = "d"
-      >>> cmp(b, a)
-      1
+    >>> a = "c"
+    >>> b = "d"
+    >>> cmp(b, a)
+    1
     ```
    
 ### 元组
@@ -414,9 +414,9 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     -  user_pay = ('Tom','egg',20)
   - 可以通过type()函数来当前变量的属性：
      ```python
-      >>> a = (2,)
-      >>> type(a)
-      <type 'tuple'>
+     >>> a = (2,)
+     >>> type(a)
+     <type 'tuple'>
      ```
     >- 看到tuple就说明此变量为元组
 - 元组操作：
@@ -425,11 +425,11 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 - 实例演示，定义一个元组a = ('Tom',30,'male')
   - 试图更改元组里面的元素，这里试图修改一个值：
      ```python
-      >>> a = ('Tom',30,'male')
-      >>> a[1] = 31
-      Traceback (most recent call last):
-        File "<stdin>", line 1, in <module>
-      TypeError: 'tuple' object does not support item assignment
+     >>> a = ('Tom',30,'male')
+     >>> a[1] = 31
+     Traceback (most recent call last):
+       File "<stdin>", line 1, in <module>
+     TypeError: 'tuple' object does not support item assignment
      ```
      >修改其中一个元素报错：告诉我们元组是不支持组分配指定的，也就说不能修改。
   - 拆分元组操作：
@@ -480,27 +480,27 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     - 索引取值：
       定义一个列表：a = [1,2,3,4,5],通过索引取值：
       ```python
-       >>> a = [1,2,3,4,5]
-       >>> a[0]
-       1
-       >>> a[1]
-       2
-       >>> a[4]
-       5
+      >>> a = [1,2,3,4,5]
+      >>> a[0]
+      1
+      >>> a[1]
+      2
+      >>> a[4]
+      5
       ```
     - 切片取值：
       定义一个列表：a = [1,2,3,4,5],通过切片取值：
       - 从位置1开始取值，到列表位置结束：
         ```python
-          >>> a = [1,2,3,4,5]
-          >>> a[1:]
-         [2, 3, 4, 5]
+        >>> a = [1,2,3,4,5]
+        >>> a[1:]
+        [2, 3, 4, 5]
         ```
      - 从位置1取值，到位置4：
        ```python
-        >>> a = [1,2,3,4,5]
-        >>> a[1:4]
-        [2, 3, 4]
+       >>> a = [1,2,3,4,5]
+       >>> a[1:4]
+       [2, 3, 4]
        ```
      - 从位置4结束取值:
        ```python
@@ -518,37 +518,37 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     - 添加值，使用属性`append`来实现：
       - 定义一个列表a = [1,2,3,4,5],然后通过`append`属性添加值：
         ```python
-         >>> a = [1,2,3,4,5]
-         >>> a.append(6)
-         >>> a
-         [1, 2, 3, 4, 5, 6]
+        >>> a = [1,2,3,4,5]
+        >>> a.append(6)
+        >>> a
+        [1, 2, 3, 4, 5, 6]
         ```
        >说明：属性`append`属于给列表结尾追加值，存储空间会变化，可通过`id`来确认
     - 删除值：
       - 使用`del`删除列表中的元素：
         ```python
-         >>> a = [1,2,3,4,5,6]
-         >>> del(a[5])
-         >>> a
-         [1, 2, 3, 4, 5]
+        >>> a = [1,2,3,4,5,6]
+        >>> del(a[5])
+        >>> a
+        [1, 2, 3, 4, 5]
         ```
         >`del()`通过列表索引删除指定的元素，好处在于如果列表元素太长，使用`del()`能快速删除指定的元素，简单明了。而且可以直接删除整个列表。
      - 使用`remove`删除列表中的元素：
         ```python
-         >>> a = [1,2,3,4,5]
-         >>> a.remove(5)
-         >>> a
-         [1, 2, 3, 4]
+        >>> a = [1,2,3,4,5]
+        >>> a.remove(5)
+        >>> a
+        [1, 2, 3, 4]
         ```
        >`remove`直接指定列表的元素就可以删除
      
     - 修改值：
       - 通过`list[] = x`来对列表中的元素进行修改：
         ```python
-         >>> a = [1,2,3,4]
-         >>> a[3] = 5
-         >>> a
-         [1, 2, 3, 5]
+        >>> a = [1,2,3,4]
+        >>> a[3] = 5
+        >>> a
+        [1, 2, 3, 5]
         ```
        >通过索引重新赋值即可
    - 修改列表中的元素列表的存储空间不变（扩展说明），例：
@@ -636,83 +636,83 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
      ```
     实例：
      ```python
-       >>> a = {'name':'guo','age':23,'sex':'m'}
-       >>> a
-       {'age': 23, 'name': 'guo', 'sex': 'm'}
-       >>> a = {'name':'guo','age':23,'sex':'m'}
-       >>> a
-       {'age': 23, 'name': 'guo', 'sex': 'm'}
+     >>> a = {'name':'guo','age':23,'sex':'m'}
+     >>> a
+     {'age': 23, 'name': 'guo', 'sex': 'm'}
+     >>> a = {'name':'guo','age':23,'sex':'m'}
+     >>> a
+     {'age': 23, 'name': 'guo', 'sex': 'm'}
      ```
     打印key值：
       ```python
-       >>> for key in a:
-       ...     print key
-       ...
-       age
-       name
-       sex
-       ```
-       打印value值：
-       ```python
-       >>> for key in a:
-       ...     a[key]
-       ...
-       23
-       'guo'
-       'm'
-      ```
+      >>> for key in a:
+      ...     print key
+      ...
+      age
+      name
+      sex
+     ```
+    打印value值：
+    ```python
+    >>> for key in a:
+    ...     a[key]
+    ...
+    23
+    'guo'
+    'm'
+    ```
   - 使用迭代器，例如：
-      ```python
-       for key in dict1:
-      ```
+     ```python
+     for key in dict1:
+     ```
 - 更新和删除：
   - 直接使用键值访问更新，内建的`update()`方法可以将整个字典的内容拷贝到另一个字典中，例如将字典b = {'room': 1, 'service': 220, 'number': 202}拷贝到字典a = {'age': 23, 'name': 'guo', 'sex': 'm'}中，执行结果如下：
     ```python
-     >>> a = {'age': 23, 'name': 'guo', 'sex': 'm'}
-     >>> b = {'room': 1, 'service': 220, 'number': 202}
-     >>> a.update(b)
-     >>> a
-     {'name': 'guo', 'service': 220, 'room': 1, 'age': 23, 'number': 202, 'sex': 'm'}
+    >>> a = {'age': 23, 'name': 'guo', 'sex': 'm'}
+    >>> b = {'room': 1, 'service': 220, 'number': 202}
+    >>> a.update(b)
+    >>> a
+    {'name': 'guo', 'service': 220, 'room': 1, 'age': 23, 'number': 202, 'sex': 'm'}
     ```
     >说明：字典当中是无序排列，所以不管你添加还是修改，最后的输出都会与之前的序列不一致
   - `del dict1['a']`删除字典中键值为a的元素，例如删除字典d = {'car':'baoma','color':'blue'}中的color键和对应的值，执行结果如下：
       ```python
-        >>> d = {'car':'baoma','color':'blue'}
-        >>> d
-        {'color': 'blue', 'car': 'baoma'}
-        >>> del d['color']
-        >>> d
-        {'car': 'baoma'}
+      >>> d = {'car':'baoma','color':'blue'}
+      >>> d
+      {'color': 'blue', 'car': 'baoma'}
+      >>> del d['color']
+      >>> d
+      {'car': 'baoma'}
       ```
     - `dict11.pop('a')`删除并返回键为'a'的元素，例如删除字典a = {'car': 'baoma'},执行结果如下：
        ```python
-         >>> a = {'car': 'baoma'}
-         >>> d.pop('car')
-         'baoma'
-         >>> d
-         {}
+       >>> a = {'car': 'baoma'}
+       >>> d.pop('car')
+       'baoma'
+       >>> d
+       {}
       ```
      >说明：字典内建方法`dict.pop()`与其他内建`pop()`有区别的，具体需要查看help手册(`help(object.pop))`
     - `dict1.clear()`删除字典所有的元素,例如删除字典d = {'car':'baoma','color':'blue'}中所有的元素，执行结果如下：
         ```python
-         >>> d = {'car':'baoma','color':'blue'}
-         >>> d
-         {'color': 'blue', 'car': 'baoma'}
-         >>> d.clear()
-         >>> d
-         {}
+        >>> d = {'car':'baoma','color':'blue'}
+        >>> d
+        {'color': 'blue', 'car': 'baoma'}
+        >>> d.clear()
+        >>> d
+        {}
         ```  
     - `del dict1`删除整个字典，例如删除字典d = {'car':'baoma','color':'blue'}，执行结果如下：
         ```python
-         >>> d = {'car':'baoma','color':'blue'}
-         >>> d
-         {'color': 'blue', 'car': 'baoma'}
-         >>> del d
-         >>> d
-         Traceback (most recent call last):
-           File "<stdin>", line 1, in <module>
-         NameError: name 'd' is not defined
-     ```
+        >>> d = {'car':'baoma','color':'blue'}
+        >>> d
+        {'color': 'blue', 'car': 'baoma'}
+        >>> del d
+        >>> d
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in <module>
+        NameError: name 'd' is not defined
+       ```
      >说明：底下报错d没有被定义，说明字典d已经不存在了
   - `dict1['a] = 'string'`添加一对键值，例如给c = {'id':1,'class':23,'location':345}添加一对键值'pay':45，执行结果如下：
     ```python
@@ -726,14 +726,14 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
 比较依次是字典的大小、键、值）。
   - 工厂函数`dict()`，例如：a = dict((['x','y'],[1,2]))，b = (one=1,two=2),执行结果如下：
      ```python
-       >>> a = dict((['x','y'],[1,2]))
-       >>> a
-       {'x': 'y', 1: 2}
+     >>> a = dict((['x','y'],[1,2]))
+     >>> a
+     {'x': 'y', 1: 2}
      ```
      ```python
-       >>> b = dict(one=1,two=2)
-       >>> b
-       {'two': 2, 'one': 1}
+     >>> b = dict(one=1,two=2)
+     >>> b
+     {'two': 2, 'one': 1}
      ```
   - 使用`dict()`生成字典比用`copy慢，因此这种情况下推荐使用`copy()`，例如：将字典 t = {'x':1,'y':2}的元素拷贝给新的字典c，使其拥有字典t一样的键值，执行结果如下：
     ```python
@@ -788,12 +788,12 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     
    - 查看字典中`copy()`的帮助信息，执行一下步骤：
      ```python
-       >>> help(a.copy)
-       Help on built-in function copy:
-	  
-       copy(...)
-           D.copy() -> a shallow copy of D
-       (END)
+     >>> help(a.copy)
+     Help on built-in function copy:
+	 
+     copy(...)
+         D.copy() -> a shallow copy of D
+     (END)
      ```
     >说明：这里面就是字典内建函数`copy()`的查看帮助信息，其他的也是这样弄得，执行命令就得`字典对象.内建函数()`,例：`a.copy()`
 - 字典内建函数方法小结：
@@ -919,16 +919,16 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
       >备注：当条件为True时，所有的print都返回,这里写在3脚本是为直观
    - 判断条件为False，查看返回结果：
       ```python
-       # vi python
-       #!/bin/env python
-	   
-        if True:
-            print "True is ok"
-        print "Fasle and True"
+      # vi python
+      #!/bin/env python
+	  
+       if True:
+           print "True is ok"
+       print "Fasle and True"
      ```
      ```python
-      # python python
-      Fasle and True
+     # python python
+     Fasle and True
      ```
      >备注：此时，当条件为`False`时，返回结果只`print "Fasle and True"`，之所以这里还会仍旧显示这个，是因为`print "Fasle and True"`跟`if`同级别的，不在`if`的判断里面
 - else语句：
@@ -944,15 +944,15 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
   - 实例：
     判断如果用户输入一个数字1返回ok，否则返回error：
     ```python
-     # cat p.py
-     #!/bin/env python
-     
-     a = raw_input("please input number: ")
-     
-     if a == "1":
-         print "your input is ok"
-     else:
-         print "your input is Error"
+    # cat p.py
+    #!/bin/env python
+    
+    a = raw_input("please input number: ")
+    
+    if a == "1":
+        print "your input is ok"
+    else:
+        print "your input is Error"
     ```
     ```python
      # python p.py
@@ -960,9 +960,9 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
      your input is ok
     ```
     ```python
-     # python p.py
-      please input number: 2
-      your input is ok 
+    # python p.py
+     please input number: 2
+     your input is ok 
     ```
 - `elif`语句：
   - `elif`语句存在的意义，当需要多个表达式为真值时执行一段代码，`elif`可以存在多个，并且它也是可选的，比如说,当用户输入1-5的数字时，执行一段代码告诉他相对应的结果，否则就告诉他失败
@@ -1011,6 +1011,3 @@ Windows下安装很方便，根据系统版本可下载相对应的Python MSI的
     your input number is 6 error
     ```
      >备注：就演示一下输入1和输入6就可以达到目的了,这里面的`%s`和`%`输出格式化的字符串和格式化字符串
-
-
-
